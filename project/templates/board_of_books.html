@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 xmlns="http://www.w3.org/1999/html">Books log</h1>
+<div class="item">
+    {% for item in books%}
+    <h2>Книга #{{item.id}}</h2>
+
+    <div class="table">
+        <div class="row table-secondary align-items-center">
+
+            <div class="col-6">
+                Название книги
+            </div>
+            <div class="col">
+                Автор книги
+            </div>
+            <div class="col">
+                Обложка книги
+            </div>
+        </div>
+
+        <div class="row table-secondary align-items-center purple">
+            <div class="col-6">
+                {{item.title}}
+            </div>
+            <div class="col">
+                {{avtors[item.id_avt-1].name}}
+                {{avtors[item.id_avt-1].surname}}
+            </div>
+            <div class="col">
+                <img src="/static/img/" + {{item.name_foto}} alt="здесь должна была быть картинка, но не нашлась"/>
+            </div>
+        </div>
+        <a href="/jobs/{{ item.id }}" class="btn btn-warning">
+                Смотреть отзывы
+            </a>
+        {% if current_user.is_authenticated and current_user == item.user %}
+        <div>
+
+            <a href="/jobs_delete/{{ item.id }}" class="btn btn-danger">
+                Удалить
+            </a>
+        </div>
+        {% endif %}
+    </div>
+
+
+    {% endfor %}
+
+</div>
+{% endblock %}

@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Adding a Book</h1>
+<form action="" method="post">
+    {{ form.hidden_tag() }}
+    <p>
+        {{ form.content1.label }}<br>
+        {{ form.content1(class="form-control") }}<br>
+        {% for error in form.content1.errors %}
+            <p content="alert alert-danger" role="alert">
+                {{ error }}
+            </p>
+        {% endfor %}
+    </p>
+    <p>
+        {{ form.content2.label }}<br>
+        {{ form.content2(class="form-control") }}<br>
+        {% for error in form.content2.errors %}
+            <p content="alert alert-danger" role="alert">
+                {{ error }}
+            </p>
+        {% endfor %}
+    </p>
+    <p>
+        {{ form.content3.label }}<br>
+        {{ form.content3(class="form-control") }}<br>
+        {% for error in form.content3.errors %}
+            <p content="alert alert-danger" role="alert">
+                {{ error }}
+            </p>
+        {% endfor %}
+    </p>
+    <p>
+        {{ form.content4.label }}<br>
+        {{ form.content4(class="form-control") }}<br>
+        {% for error in form.content4.errors %}
+            <p content="alert alert-danger" role="alert">
+                {{ error }}
+            </p>
+        {% endfor %}
+    </p>
+    <p>
+        {{ form.content5.label }}<br>
+        {{ form.content5(class="form-control") }}<br>
+        {% for error in form.content5.errors %}
+            <p content="alert alert-danger" role="alert">
+                {{ error }}
+            </p>
+        {% endfor %}
+    </p>
+    <p>
+        {{ form.content6.label }}<br>
+        {{ form.content6(class="form-control") }}<br>
+        {% for error in form.content6.errors %}
+            <p content="alert alert-danger" role="alert">
+                {{ error }}
+            </p>
+        {% endfor %}
+    </p>
+    <p>{{ form.submit(type="submit", class="btn btn-primary") }}</p>
+    {{message}}
+</form>
+{% endblock %}

@@ -1,0 +1,1 @@
+from . import avtor, book, genre, users
